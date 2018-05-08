@@ -17,6 +17,8 @@
 	<title>Music Timelapse</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600" rel="stylesheet">
+	<script src="js/include-html.js"></script>
+
 		<!--
 		CSS
 		============================================= -->
@@ -39,8 +41,8 @@
 							</div>
 							<div class="main-menubar d-flex align-items-center">
 								<nav class="hide">
-									<a href="index.html">Home</a>
-									<a href="">About project</a>
+									<p  onclick="navigation('./home.html')">Home</p>
+									<a onclick="navigation('./about.html')">About project</a>
 								</nav>
 								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
 							</div>
@@ -50,93 +52,11 @@
 			</header>
 			<div class="banner-area">
 				<div class="container">
-					<div class="row justify-content-center height align-items-center">
-						<div class="col-lg-8">
-							<div class="banner-content text-center">
-								<span class="text-white top text-uppercase">Choose a year and enjoy</span>
-								<h1 class="text-white text-uppercase">Music starts here</h1>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>1988</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>1991</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>1995</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>1997</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>2001</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>2003</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>2004</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>2006</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>2007</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>2009</span></a>
-								<a href="#" class="circle-btn d-inline-flex align-items-center"><span>2012</span></a>
-							</div>
-						</div>
-					</div>
+					<div id="page" include-html="./home.html"></div>
 				</div>
 			</div>
 		</div>
-		<div class="main-wrapper">
-			<!-- Start Footer Widget Area -->
-			<!-- <section class="footer-widget-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="single-widget d-flex flex-wrap justify-content-between">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="lnr lnr-pushpin"></span>
-								</div>
-								<div class="desc">
-									<h6 class="title text-uppercase">Address</h6>
-									<p>56/8, panthapath, west <br> dhanmondi, kalabagan, <br>Dhaka - 1205</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="single-widget d-flex flex-wrap justify-content-between">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="lnr lnr-earth"></span>
-								</div>
-								<div class="desc">
-									<h6 class="title text-uppercase">Email Address</h6>
-									<div class="contact">
-										<a href="mailto:info@dataarc.com">info@dataarc.com</a> <br>
-										<a href="mailto:support@dataarc.com">support@dataarc.com</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="single-widget d-flex flex-wrap justify-content-between">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="lnr lnr-phone"></span>
-								</div>
-								<div class="desc">
-									<h6 class="title text-uppercase">Phone Number</h6>
-									<div class="contact">
-										<a href="tel:1545">012 4562 982 3612</a> <br>
-										<a href="tel:54512">012 6321 956 4587</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
-			<!-- End Footer Widget Area -->
-			<!-- Start footer Area -->
-			<footer>
-				<div class="container">
-					<div class="footer-content d-flex justify-content-between align-items-center flex-wrap">
-						<div class="logo">
-							<img src="img/logo.png" alt="">
-						</div>
-						<div class="copy-right-text">Copyright &copy; 2018  |  All rights reserved. This site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Keetmine</a></div>
-						<div class="footer-social">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- End footer Area -->
-		</div>
+		<div include-html="./footer.html"></div>
 
 
 
@@ -149,5 +69,10 @@
 		<script src="js/jquery.nice-select.min.js"></script>
 		<script src="js/jquery.magnific-popup.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/include-html.js"></script>
+		<script src="js/navigation.js"></script>
+
+
+
 	</body>
 </html>
