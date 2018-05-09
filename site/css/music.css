@@ -1,0 +1,87 @@
+.btn_conteiner {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.btn_play {
+  line-height: 40px;
+  padding: 0 30px;
+  border-radius: 20px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: white !important;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn_play:focus {
+  outline: none;
+}
+
+.btn_play span {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.btn_play:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  z-index: 1;
+  background-image: -moz-linear-gradient(0deg, #000000 0%, #332d38 100%);
+  background-image: -webkit-linear-gradient(0deg, #000000 0%, #332d38 100%);
+  background-image: -ms-linear-gradient(0deg, #000000 0%, #332d38 100%);
+}
+
+.btn_play:hover {
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn_play:hover:after {
+  opacity: 1;
+  color: #fff;
+
+}
+
+.container1988 {
+  background-image: url(/img/1988back.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.stars{
+  width: 100%;
+  height: 100%;
+}
+
+.stars > canvas{
+  background-color: #01010157;
+}

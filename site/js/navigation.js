@@ -18,22 +18,29 @@ function navigation(page) {
 
 };
 
-// $(document).ready(function(){
 function list() {
   var z, i, elmnt, year, xhttp;
 
   z = document.getElementsByTagName("a");
+	var bodys = document.getElementsByTagName("body");
+	console.log(body)
   for (i = 0; i < z.length; i++) {
     elmnt = z[i]
+		var body = bodys[0]
     year = elmnt.getAttribute("year")
     if (year) {
-			var text = document.createTextNode(year);
-			elmnt.appendChild(text);
+			elmnt.innerHTML = "<span>" + year + "</span>";
+			elmnt.onmouseover = function() {
+				this.setAttribute("style", "background-size: cover; background-image: url(/img/"+ this.getAttribute("year") + ".jpg");
+				body.setAttribute("style", "background-size: cover; background-image: url(/img/"+ this.getAttribute("year") + ".jpg");
+			};
+			elmnt.onmouseout = function() {
+				this.setAttribute("style", "background-image: null");
+				body.setAttribute("style", " background-image: null");
+			};
 			elmnt.onclick = function(){
 				navigation('./' + this.getAttribute("year") + '.html')
 			};
     }
   }
 };
-// list()
-// });

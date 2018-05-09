@@ -1985,7 +1985,7 @@ canvas {
   background-image: -ms-linear-gradient(0deg, #07040c 0%, #2e2d32 100%);
 }
 
-.p1-gradient-bg, .circle-btn:after, .primary-btn:after, .single-feature .icon:after, .single-widget .icon:after {
+.p1-gradient-bg, .primary-btn:after, .single-feature .icon:after, .single-widget .icon:after {
   background-image: -moz-linear-gradient(0deg, #e66686 0%, #2e2d32 100%);
   background-image: -webkit-linear-gradient(0deg, #e66587 0%, #332d38 100%);
   background-image: -ms-linear-gradient(0deg, #e66686 0%, #2e2d32 100%);
@@ -2079,6 +2079,8 @@ canvas {
 }
 
 .circle-btn {
+  height: 90px;
+  width: 90px;
   line-height: 40px;
   padding: 10px;
   border-radius: 50%;
@@ -2101,6 +2103,7 @@ canvas {
 }
 
 .circle-btn span {
+  width: 100%;
   color: #fff;
   position: relative;
   z-index: 2;
