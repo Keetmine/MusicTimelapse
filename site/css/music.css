@@ -85,3 +85,20 @@
 .stars > canvas{
   background-color: #01010157;
 }
+
+
+.modal-tips-dialog {
+  margin-top: 20%;
+}
+.modal-tips-content {
+    background: #00000033;
+}
+
+.modal-tips-header, .modal-tips-footer {
+    border: none;
+}
+
+.modal-tips-body > h4, .modal-tips-header > button {
+    color: white;
+    text-align: center;
+}

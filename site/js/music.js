@@ -10,7 +10,6 @@ function start1988() {
 	var container = document.getElementById("stars");
 	container.setAttribute("style", "display: block;");
 
-
 	particlesJS("stars", {
 	  "particles": {
 	    "number": {
@@ -121,8 +120,6 @@ function start1988() {
 	  },
 	  "retina_detect": true
 	});
-
-
 };
 
 function stop1988() {

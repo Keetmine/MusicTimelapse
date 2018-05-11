@@ -39,6 +39,8 @@
 }
 
 body {
+  overflow: inherit !important;
+  padding: 0 !important;
   color: #777777;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
