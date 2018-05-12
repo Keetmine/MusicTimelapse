@@ -6,6 +6,10 @@
 
 
 function start1988() {
+	function str(el) {
+	    if (!el) return "null"
+	  }
+
 	player.start();
 	var container = document.getElementById("stars");
 	container.setAttribute("style", "display: block;");
