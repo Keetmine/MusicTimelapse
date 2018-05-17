@@ -1,7 +1,5 @@
 function navigation(page) {
-
 	var elmnt = document.getElementById("page")
-
 	if (page) {
 		xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
@@ -29,7 +27,6 @@ function navigation(page) {
 
 function list() {
   var z, i, elmnt, year, xhttp;
-
   z = document.getElementsByTagName("a");
 	var bodys = document.getElementsByTagName("body");
   for (i = 0; i < z.length; i++) {
@@ -49,25 +46,37 @@ function list() {
 			elmnt.onclick = function(){
 				var year = parseInt(this.getAttribute("year"))
 				navigation('/' + year + '.html')
-				console.log(years)
-				console.log(year)
-
 				years.splice(years.indexOf(year), 1)
-				console.log(years)
 			};
     }
   }
 };
-var years = [1988, 1991, 1995, 1997, 2001, 2003, 2004, 2006, 2007, 2009, 2012]
+
+var years = [1988, 1991, 1995, 1997, 2003, 2006, 2007, 2009, 2012]
 
 function nextLvl() {
 	var rundomnumber = Math.floor(Math.random() * years.length);
 	if (years.length == 0) {
 		navigation('/finish.html')
-		years = [1988, 1991, 1995, 1997, 2001, 2003, 2004, 2006, 2007, 2009, 2012]
-
+		years = [1988, 1991, 1995, 1997, 2003, 2006, 2007, 2009, 2012]
 	} else {
 		navigation('/' + years[rundomnumber] + '.html')
 		years.splice(rundomnumber, 1);
 	}
+}
+
+function addInfo() {
+	var songNameContainer = document.getElementById("song-name"),
+	albumImageContainer = document.getElementById("album-image"),
+	all = document.getElementsByTagName("div"),
+	container, i, songName, albumImage;
+
+  for (i = 0; i < all.length; i++) {
+    container = all[i]
+    songName = container.getAttribute("song-name")
+		albumImage = container.getAttribute("album-image")
+
+    if (songName) songNameContainer.innerHTML = songName;
+		if (albumImage) albumImageContainer.src = albumImage;
+  }
 }

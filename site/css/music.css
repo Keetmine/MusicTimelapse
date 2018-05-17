@@ -71,6 +71,11 @@
 
 }
 
+.my_container {
+  height: 100%;
+  width: 100%;
+}
+
 .container1988 {
   background-image: url(/img/1988back.jpg);
   background-size: cover;

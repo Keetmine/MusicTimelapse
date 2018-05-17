@@ -1,21 +1,25 @@
+var player = new Tone.Player({
+		"url" : "./audio/1988.mp3",
+		"loop" : true
+}).toMaster()
 
-	var player = new Tone.Player({
-			"url" : "./audio/1988.mp3",
-			"loop" : true
-	}).toMaster()
+var back = new Tone.Player({
+		"url" : "./audio/back.mp3",
+		"loop" : true,
+		"volume" : -22,
+}).toMaster()
 
-	var back = new Tone.Player({
-			"url" : "./audio/back.mp3",
-			"loop" : true,
-			"volume" : -22,
-	}).toMaster()
+var noise = new Tone.Noise({
+		"volume" : -20,
+		"type" : "brown"
+}).toMaster();
 
 function startBack() {
-		back.start();
+		noise.start();
 }
 
 function stopBack() {
-		back.stop();
+		noise.stop();
 }
 
 document.addEventListener("keydown", function(event) {
@@ -28,7 +32,8 @@ document.addEventListener("keyup", function(event) {
 
 function start1988() {
 	player.start();
-	back.mute = true;
+	noise.stop();
+	// back.mute = true;
 	var container = document.getElementById("stars");
 	container.setAttribute("style", "display: block;");
 
@@ -145,8 +150,9 @@ function start1988() {
 };
 
 function stop1988() {
+	noise.start();
 	player.stop();
-	back.mute = false;
+	// back.mute = false;
 	var container = document.getElementById("stars");
 	container.setAttribute("style", "display: none;");
 };
