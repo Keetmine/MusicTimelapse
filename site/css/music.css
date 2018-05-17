@@ -1,9 +1,17 @@
-.btn_conteiner {
+.btn_container {
   position: absolute;
   bottom: 5%;
   width: 100%;
   text-align: center;
+  padding: 0 15px;
 }
+
+.btn_container > button {
+  padding: 0 16px;
+  position: absolute;
+  right: 15px;
+}
+
 
 .btn_play {
   line-height: 40px;
@@ -86,7 +94,6 @@
   background-color: #01010157;
 }
 
-
 .modal-tips-dialog {
   margin-top: 20%;
 }
@@ -142,4 +149,37 @@
 /* обратная, изначально скрытая сторона */
 .back {
  transform: rotateY(180deg);
+}
+
+.info-container {
+  float: left;
+  max-width: 40%;
+  position: absolute;
+  padding: 0 20px;
+  text-align: left;
+  bottom: 5%;
+}
+
+.info-container > img{
+  width: 60px;
+  margin-right: 5px;
+  display: block;
+  cursor: pointer;
+}
+
+.info-container > h4 {
+  color: white;
+  display: inline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.info-container > h4:hover ~ .primary-btn, .info-container > img:hover ~ .primary-btn {
+  background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+  border: 1px solid transparent;
+}
+
+.info-container > a {
+  padding: 13px;
+  margin-left: 5px;
 }

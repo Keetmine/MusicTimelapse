@@ -7,21 +7,17 @@ function navigation(page) {
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4) {
 				if (this.status == 200) {
-					elmnt.innerHTML = this.responseText;
+					elmnt.innerHTML = this.responseText
 					list()
-					// var url = 'index.html'
-	        // if (url.indexOf('#') >= 0) {
-					// 		console.log(url)
-	        //     url = url.slice(0, window.location.href.indexOf('#'))
-	        // }
-	        // if (page) {
-					// 		if (page != '/home.html') {
-					// 				url = url + '#' + page
-					// 		}
-	        // }
-	        // window.history.pushState(null, document.title, url);
+					startBack()
+					includeHTML()
+					if (page == '/home.html') {
+						stopBack()
+					}
 				}
-				if (this.status == 404) {elmnt.innerHTML = "Page not found."}
+				if (this.status == 404) {
+					navigation('/404.html')
+				}
 			}
 		}
 		xhttp.open("GET", page, true)
@@ -30,21 +26,6 @@ function navigation(page) {
 		return;
 	}
 };
-
-
-// $(document).ready(function(){
-// window.addEventListener("hashchange", function(e) {
-// 	console.log(e)
-// 	var parts = e.newURL.split('/');
-// 	var lastSegment = parts.pop() || parts.pop();
-// 	if (lastSegment == 'index.html') {
-// 		navigation("/home.html");
-// 	} else {
-// 		navigation(lastSegment);
-// 	}
-// }, false);
-// });
-
 
 function list() {
   var z, i, elmnt, year, xhttp;
@@ -66,8 +47,27 @@ function list() {
 				body.setAttribute("style", " background-image: null");
 			};
 			elmnt.onclick = function(){
-				navigation('/' + this.getAttribute("year") + '.html')
+				var year = parseInt(this.getAttribute("year"))
+				navigation('/' + year + '.html')
+				console.log(years)
+				console.log(year)
+
+				years.splice(years.indexOf(year), 1)
+				console.log(years)
 			};
     }
   }
 };
+var years = [1988, 1991, 1995, 1997, 2001, 2003, 2004, 2006, 2007, 2009, 2012]
+
+function nextLvl() {
+	var rundomnumber = Math.floor(Math.random() * years.length);
+	if (years.length == 0) {
+		navigation('/finish.html')
+		years = [1988, 1991, 1995, 1997, 2001, 2003, 2004, 2006, 2007, 2009, 2012]
+
+	} else {
+		navigation('/' + years[rundomnumber] + '.html')
+		years.splice(rundomnumber, 1);
+	}
+}
