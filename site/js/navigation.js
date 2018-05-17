@@ -80,3 +80,17 @@ function addInfo() {
 		if (albumImage) albumImageContainer.src = albumImage;
   }
 }
+
+function showInfo() {
+		var infoContainer = document.getElementById("information-container")
+		infoContainer.setAttribute("style", "opacity: 1; z-index: 2;")
+		var mainContainer = document.getElementById("my_container")
+		mainContainer.setAttribute("style", "z-index: 1;")
+}
+
+function hideInfo() {
+		var infoContainer = document.getElementById("information-container")
+		infoContainer.setAttribute("style", "opacity: 0; z-index: 1;")
+		var mainContainer = document.getElementById("my_container")
+		mainContainer.setAttribute("style", "z-index: 2;")
+}
