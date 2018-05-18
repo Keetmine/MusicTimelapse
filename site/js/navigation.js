@@ -82,15 +82,44 @@ function addInfo() {
 }
 
 function showInfo() {
-		var infoContainer = document.getElementById("information-container")
+		var infoContainer = document.getElementById("information-container"),
+		mainContainer = document.getElementById("my_container"),
+		groupContainer = document.getElementById("group"),
+		yearContainer = document.getElementById("year"),
+		songContainer = document.getElementById("song"),
+		imageContainer = document.getElementById("song"),
+		descriptionContainer = document.getElementById("description"),
+		linkContainer = document.getElementById("link"),
+		header = document.getElementById("header"),
+		allElem = document.getElementsByTagName("div"),
+		con, i, group, song, description, link, year;
+
 		infoContainer.setAttribute("style", "opacity: 1; z-index: 2;")
-		var mainContainer = document.getElementById("my_container")
 		mainContainer.setAttribute("style", "z-index: 1;")
+		header.setAttribute("style", "z-index: 1;")
+		for (i = 0; i < allElem.length; i++) {
+			con = allElem[i]
+			group = con.getAttribute("group")
+			year = con.getAttribute("year")
+			song = con.getAttribute("song")
+			description = con.getAttribute("description")
+			link = con.getAttribute("link")
+
+			if (year) yearContainer.innerHTML = year;
+			if (group) groupContainer.innerHTML = group;
+			if (song) songContainer.innerHTML = song;
+			if (description) descriptionContainer.innerHTML = description;
+			if (link) linkContainer.href = link;
+			if (image) imageContainer.src = "/img/" + year + "-album.jpg";
+
+		}
+
 }
 
 function hideInfo() {
 		var infoContainer = document.getElementById("information-container")
-		infoContainer.setAttribute("style", "opacity: 0; z-index: 1;")
 		var mainContainer = document.getElementById("my_container")
+		infoContainer.setAttribute("style", "opacity: 0; z-index: 1;")
 		mainContainer.setAttribute("style", "z-index: 2;")
+		header.setAttribute("style", "z-index: 3;")
 }
