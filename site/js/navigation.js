@@ -11,6 +11,8 @@ function navigation(page) {
 					includeHTML()
 					if (page == '/home.html') {
 						stopBack()
+					} else {
+						keyEvent()
 					}
 				}
 				if (this.status == 404) {
@@ -87,7 +89,7 @@ function showInfo() {
 		groupContainer = document.getElementById("group"),
 		yearContainer = document.getElementById("year"),
 		songContainer = document.getElementById("song"),
-		imageContainer = document.getElementById("song"),
+		imageContainer = document.getElementById("image"),
 		descriptionContainer = document.getElementById("description"),
 		linkContainer = document.getElementById("link"),
 		header = document.getElementById("header"),
@@ -110,7 +112,7 @@ function showInfo() {
 			if (song) songContainer.innerHTML = song;
 			if (description) descriptionContainer.innerHTML = description;
 			if (link) linkContainer.href = link;
-			if (image) imageContainer.src = "/img/" + year + "-album.jpg";
+			if (year) imageContainer.src = "/img/" + year + "-album.jpg";
 
 		}
 
@@ -122,4 +124,15 @@ function hideInfo() {
 		infoContainer.setAttribute("style", "opacity: 0; z-index: 1;")
 		mainContainer.setAttribute("style", "z-index: 2;")
 		header.setAttribute("style", "z-index: 3;")
+}
+
+function keyEvent() {
+	window.onkeyup = function(e){
+	var k = e.keyCode;
+	if (k == 32){
+		if (years.length > 0)	nextLvl()
+	}
+	if (k == 40) showInfo()
+	if (k == 27) hideInfo()
+}
 }
